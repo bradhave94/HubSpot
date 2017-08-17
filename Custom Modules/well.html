@@ -71,3 +71,12 @@
     cursor: pointer;
     color: {{ baseColor }};
 }
+
+
+/**
+ * Well Module Close Button
+ */
+
+$("#well .close").click(function() {
+    $(this).parent("#well").fadeOut();
+});
