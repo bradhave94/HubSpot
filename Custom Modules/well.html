@@ -1,0 +1,73 @@
+<div id="well">
+  {% if widget.ability_to_close %}
+    <span class="close"><i class="fa fa-times"></i></span>
+  {% endif %}
+  <div class="{{ widget.type_of_well }} {{ widget.well_size }}">
+    {{ widget.well_text_editor }}
+  </div>
+</div>
+
+/* Well Colors */
+{% set primary   = "#428bca" %}
+{% set success   = "#5cb85c" %}
+{% set info      = "#5bc0de" %}
+{% set danger    = "#a94442" %}
+{% set plain     = "#f5f5f5" %}
+
+/* Well Module */
+#well{
+    min-height: 20px;
+    margin-bottom: 20px;
+    {{ borderradius("4px") }}
+    color: #fff;
+}
+#well .default{
+    {{ borderradius("4px") }}
+    border-style: solid;
+    border-width: 1px;
+    background: {{ accentColor1 }};
+    border-color: {{ color_variant(accentColor1, -50) }};
+}
+#well .primary{
+    {{ borderradius("4px") }}
+    background: {{ color_variant(primary, 50) }};
+    border: 1px solid {{ primary }};
+}
+#well .success{
+    {{ borderradius("4px") }}
+    background: {{ color_variant(success, 50) }};
+    border: 1px solid {{ success }};
+}
+#well .danger{
+    {{ borderradius("4px") }}
+    background: {{ color_variant(danger, 50) }};
+    border: 1px solid {{ danger }};
+}
+#well .info{
+    {{ borderradius("4px") }}
+    background: {{ color_variant(info, 50) }};
+    border: 1px solid {{ info }};
+}
+#well .plain{
+    {{ borderradius("4px") }}
+    background:{{ plain }};
+    color: {{ baseColor }};
+    border: 1px solid {{ accentColor3 }};
+    min-height:300px;
+}
+#well .small{
+    padding: 20px;
+}
+#well .medium{
+    padding: 24px;
+}
+#well .large{
+    padding: 28px;
+}
+
+#well .close{
+    float: right;
+    padding: 3px 10px 0px 0px;
+    cursor: pointer;
+    color: {{ baseColor }};
+}
