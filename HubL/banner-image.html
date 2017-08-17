@@ -1,0 +1,12 @@
+{% image "hero_background_image" label='Hero Background Image', src='', export_to_template_context=True %}
+
+
+{% text "hero_bg_position" label="Hero Image Position", value="20%", export_to_template_context=True %}
+
+
+<style>
+.banner-class {
+    background-image: url('{{ widget_data.hero_background_image.src }}'); 
+    background-position-y: {{ widget_data.hero_bg_position.value }};
+}
+</style>
