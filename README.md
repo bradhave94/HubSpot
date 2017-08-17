@@ -1,4 +1,4 @@
-# Cheat sheet for HubSpot snippets and modules. 
+# Cheat Sheet for HubSpot Code Snippets and Modules. 
 
 ## Boilerplate 
 * [CompanyStyle.css](https://github.com/bradhave94/HubSpot-Bolierplate/blob/master/Boilerplate/CompanyStyle.css)
