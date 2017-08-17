@@ -1,0 +1,41 @@
+<a href="#">[fa icon="chevron-up"]</a>
+
+/* Back to Top */
+.container-fluid .row-fluid .back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: auto;
+    font-size: 20px;
+    padding: 1px 8px 4px;
+    display: block;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    background: {{ accentColor1 }};
+    cursor: pointer;
+}
+.back-to-top a {
+    color: {{ color_variant(accentColor1, -50) }};
+}
+
+/**
+ * Back to Top
+ */
+
+var $backToTop = $(".back-to-top");
+$backToTop.hide();
+
+$(window).scroll(function() {
+    if ($(this).scrollTop() > 50) {
+        $backToTop.fadeIn();
+    } else {
+        $backToTop.fadeOut();
+    }
+});
+
+$backToTop.find("a").click(function(e) {
+    e.preventDefault();
+    $("html, body").animate({
+        scrollTop: 0
+    }, 500);
+});
