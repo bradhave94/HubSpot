@@ -10,3 +10,55 @@
     <div class="tab-pane" id="tab-3">{{ widget.tab_3_content }}</div>
   </div>
 </div>
+
+
+/* Tabber Module */
+.body-container .tabber-tabs {
+    border-bottom: 1px solid #ddd;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 -2px;
+}
+
+.tabber-tabs > li {
+    float: left;
+}
+
+.tabber-tabs > li > a {
+    padding-right: 12px;
+    padding-left: 12px;
+    margin-right: 2px;
+    line-height: 14px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    line-height: 20px;
+    border: 1px solid transparent;
+    {{ borderradius("4px 4px 0 0") }}
+    text-decoration: none;
+    display: block;
+}
+
+.tabber-tabs > .active > a,
+.tabber-tabs > .active > a:hover,
+.tabber-tabs > .active > a:focus {
+    color: #555555;
+    cursor: default;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+}
+
+.tabber-content {
+    background: #fff;
+    padding: 8px;
+    border: 1px solid #ddd;
+    {{ borderradius("0 4px 4px 4px") }}
+}
+
+.body-container .tabber-content ul {
+    padding: 0;
+    margin: 0;
+}
+.tabber-content .block h3 {
+    display: none;
+}
