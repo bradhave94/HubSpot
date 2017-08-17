@@ -1,0 +1,5 @@
+{# Makes the parameters available to be stored and used in template logic #}
+{% text "module_name" label="Enter some text here", value="Default text to print", export_to_template_context=True %} 
+
+{# Prints the value of the module but can also be used in template logic #}
+{{ widget_data.module_name.parameter }} 
