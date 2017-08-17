@@ -1,0 +1,5 @@
+{% boolean "toggle" label='Shop Description', value=false, export_to_template_context=True %}
+
+{% if widget_data.toggle.value %}
+   <p>test</p>
+{% endif %}
