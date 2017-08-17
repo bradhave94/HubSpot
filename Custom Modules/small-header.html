@@ -1,0 +1,23 @@
+/**
+ * Small Header on Page Scroll
+ */
+
+$(window).scroll(function() {
+
+    // Variables
+    var $body = $("body");
+    var windowScrollTop = $(window).scrollTop();
+    var secondRowOffset = $(".body-container .row-fluid-wrapper:nth-child(2)").offset();
+
+    if (secondRowOffset && windowScrollTop > secondRowOffset.top) {
+        $body.addClass("small-header");
+    } else {
+        $body.removeClass("small-header");
+    }
+});
+
+/* Header Small */
+.small-header .header-container { padding: 5px 0; }
+.small-header .header-container .hs_cos_wrapper_type_logo a img { max-width: 100px; }
+.small-header .custom-menu-primary .hs-menu-wrapper>ul { padding-top: 0; }
+.small-header .header-cta { margin-top: 5px; }
