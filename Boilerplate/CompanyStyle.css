@@ -95,7 +95,12 @@
 /* Containers */
 {% set maxWidth = "960px" %} /* Used on '.page-center' in 'Base' and in the 'Portrait tablet to landscape and desktop' media query */
 
-
+/* Well Colors */
+{% set primary   = "#428bca" %}
+{% set success   = "#5cb85c" %}
+{% set info      = "#5bc0de" %}
+{% set danger    = "#a94442" %}
+{% set plain     = "#f5f5f5" %}
 
 
 /* ==========================================================================
