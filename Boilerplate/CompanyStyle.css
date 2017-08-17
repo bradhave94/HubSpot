@@ -99,36 +99,80 @@
 
 
 /* ==========================================================================
-   Macros                                                  
+   Macros
    ========================================================================== */
 
 
-/** 
+/**
   * Create jinja macros for CSS3 properties that need browser prefixes.
   *
-  * Apply the style as shown below on it's own CSS property line.  
-  * Ignore the jinja comment tags. 
+  * Apply the style as shown below.  Ignore the jinja comment tags.
   *
   * {#  {{ variableName("values") }}  #}
   */
 
-{% macro transition(value) -%} 
-  -webkit-transition: {{ value }};
-  -moz-transition: {{ value }};
-  -o-transition: {{ value }};
-  -ms-transition: {{ value }};
-  transition: {{ value }};
-{%- endmacro %} 
 
-/** 
-  * Example of how to apply the above macro (ignore the jinja comment tags):
-  *
-  * a {
-  *   color: red;
-  *   font-size: 12px;
-  *   {#  {{ transition("all .2s linear") }}  #} 
-  * }
-  */
+/* Transition */
+{% macro transition(value) -%}
+    -webkit-transition: {{ value }};
+    -moz-transition: {{ value }};
+    -o-transition: {{ value }};
+    -ms-transition: {{ value }};
+    transition: {{ value }};
+{%- endmacro %}
+
+/* Animation Delay */
+{% macro animationDelay(value) -%}
+    animation-delay: {{ value }};
+    -moz-animation-delay: {{ value }};
+    -webkit-animation-delay: {{ value }};
+    -o-animation-delay: {{ value }};
+    transition-delay: {{ value }};
+    -webkit-transition-delay: {{ value }};
+    -moz-transition-delay: {{ value }};
+    -o-transition-delay: {{ value }};
+{%- endmacro %}
+
+/* Box Shadow */
+{% macro boxshadow(value) -%}
+    -webkit-box-shadow: {{ value }};
+    -moz-box-shadow: {{ value }};
+    -o-box-shadow: {{ value }};
+    -ms-box-shadow: {{ value }};
+    box-shadow: {{ value }};
+{%- endmacro %}
+
+/* Background Size */
+{% macro backgroundsize(value) -%}
+    -webkit-background-size: {{ value }};
+    -moz-background-size: {{ value }};
+    -o-background-size: {{ value }};
+    background-size: {{ value }};
+{%- endmacro %}
+
+/* Border Radius */
+{% macro borderradius(value) -%}
+    -webkit-border-radius: {{ value }};
+    -moz-border-radius: {{ value }};
+    -o-border-radius: {{ value }};
+    -ms-border-radius: {{ value }};
+    border-radius: {{ value }};
+{%- endmacro %}
+
+/* User Select */
+{% macro userselect(value) -%}
+    -webkit-user-select: {{ value }};
+    -moz-user-select: {{ value }};
+    -ms-user-select: {{ value }};
+    user-select: {{ value }};
+{%- endmacro %}
+
+/* Opacity*/
+{% macro opacity(value) -%}
+    -webkit-opacity: {{ value }};
+    -moz-opacity: {{ value }};
+    opacity: {{ value }};
+{%- endmacro %}
 
 
 
