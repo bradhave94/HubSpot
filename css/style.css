@@ -193,26 +193,6 @@ header h1 {
     width: 200px;
     z-index: 2;
   }
-  .cd-faq-categories a::before {
-    /* decorative rectangle on the left visible for the selected item */
-    display: block;
-    top: 0;
-    right: auto;
-    left: 0;
-    height: 100%;
-    width: 3px;
-    background-color: #a9c056;
-    opacity: 0;
-    -webkit-transition: opacity 0.2s;
-    -moz-transition: opacity 0.2s;
-    transition: opacity 0.2s;
-  }
-  .cd-faq-categories .selected {
-    background: #42464b !important;
-  }
-  .cd-faq-categories .selected::before {
-    opacity: 1;
-  }
   .cd-faq-categories.is-fixed {
     /* top and left value assigned in jQuery */
     position: fixed;
