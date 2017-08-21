@@ -58,8 +58,6 @@ Main components
 -------------------------------- */
 header {
   position: relative;
-  height: 180px;
-  line-height: 180px;
   text-align: center;
   background-color: #a9c056;
 }
@@ -70,10 +68,34 @@ header h1 {
   font-size: 20px;
   font-size: 1.25rem;
 }
+
+.header-content {
+    padding: 10% 0;
+}
+
+.header-content p {
+    margin-top: 40px;
+}
+
+.header-content a {
+    border: 1px solid;
+    border-radius: 5px;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 20px;
+    font-size: 1rem;
+    padding: 10px 20px;
+}
+
+
+.header-content a:hover {
+    background: #ffffff;
+    color: #a9c056;
+}
+
 @media only screen and (min-width: 1024px) {
   header {
-    height: 240px;
-    line-height: 240px;
   }
   header h1 {
     font-size: 36px;
