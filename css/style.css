@@ -446,3 +446,10 @@ footer li {
     float: left;
     padding: 0px 15px;
 }
+
+@media only screen and (min-width: 768px) {
+  footer li {
+      display: block;
+      padding: 15px 15px;
+  }
+}
