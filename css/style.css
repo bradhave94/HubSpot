@@ -427,3 +427,11 @@ header h1 {
     display: block;
   }
 }
+
+footer {
+    background: #444;
+    color: #fff;
+    padding: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
