@@ -1,0 +1,145 @@
+<section id="options" class="clearfix">    
+ <ul id="filters" class="option-set clearfix" data-option-key="filter">
+    <li><a href="#filter" data-option-value="*" class="selected">Show All</a></li>
+    <li><a href="#filter" data-option-value=".ebook">Ebook</a></li>
+    <li><a href="#filter" data-option-value=".whitepaper">Whitepaper</a></li>
+    <li><a href="#filter" data-option-value=".infographics">Infographics</a></li>
+    <li><a href="#filter" data-option-value=".webinar">Webinar</a></li>
+    <li><a href="#filter" data-option-value=".casestudy">Case Study</a></li>
+    <li><a href="#filter" data-option-value=".video">Video</a></li>
+</ul>
+</section>
+
+<div class="resource-box sameheight {{ widget.select_resource_type }}">
+    <div class="resource-b">
+        <div class="resource-bimg" style="background-image:url({{ widget.resources_image.src }});">
+            {% if widget.resources_image.src %}
+                <img src="{{ widget.resources_image.src }}" width="{{ widget.resources_image.width }}" height="{{ widget.resources_image.height }}" alt="{{ widget.resources_image.alt }}">
+            {% endif %}
+        </div>
+        
+        <div class="resource-btext">
+            <h6>{{ widget.resources_label }}</h6>
+            <h4>{{ widget.resources_title }}</h4>
+        </div>
+        <div class="resource-blink link-style">
+            <a {% if widget.open_in_new_tab %}target="_blank"{% endif %} href="{{ widget.link }}">{{ widget.download_button }}</a>
+        </div>
+        
+    </div> 
+</div>
+
+<style>
+/*resource section */ 
+.resource-dropdown { position:relative; }
+.resource-dropdown a { cursor:pointer; vertical-align: top;  }
+.resource-dropdown ul  { margin:10px auto 0; float:left; width:100%; list-style:none; padding:0; z-index:99; text-align:center; }
+.resource-dropdown ul li { display:inline-block; float:none; margin:0; padding:0 10px; position:relative; }
+.resource-dropdown ul li:after { position:absolute; content:''; right:0; top:50%; width:4px; height:4px; margin:-2px -2px 0 0; background:{{ base_color }}; }
+.resource-dropdown ul li:last-child:after { display:none; }
+.resource-dropdown ul li a { display:block; padding:10px; text-align:center; color:{{ font_color }}; border-bottom:transparent solid 2px; }
+.resource-dropdown ul li:first-child a { border:none; }
+.resource-dropdown ul li a.selected, .resource-dropdown ul li a:hover { color:{{ base_color }}; border-bottom:{{ base_color }} solid 2px; } 
+
+
+.row-fluid .resource-boxes { padding:60px 0 0; }
+.row-fluid .resource-box { float:left; width:33%; padding:0 10px; margin:0 0 20px; }
+.row-fluid .resource-boxes #resourcebox-continer  { margin:0 -12px; }
+.row-fluid .resource-bimg { float:left; width:100%; height:250px; background-repeat:no-repeat; background-position:center; background-size:cover; }
+.row-fluid .resource-bimg img { display:none; }
+.row-fluid .resource-b { background:#f5f5f5; padding:15px; float:left; width:100%; position:relative; overflow:hidden; }
+.row-fluid .resource-btext { float:left; width:100%; padding:15px; }
+.row-fluid .resource-btext h4 { font-size: 20px; line-height: 28px; }
+.row-fluid .resource-btext h6 { font-size:16px; margin:0 0 5px; padding:0; }
+.row-fluid .resource-blink { position: absolute; top:100%; left: 0; width: 100%; height: 100%; text-align: center; background: rgba(52,45,47,0.9); {{ transition('all ease 0.4s') }} }
+.row-fluid .resource-blink a { {{ transform('translateY(-50%)') }}; position:relative; top:50%; margin:0 }
+.row-fluid .resource-b:hover .resource-blink { top:0; }
+
+.row-fluid .resource-a { background:transparent; padding:15px; float:left; width:100%; position:relative; overflow:hidden; }
+
+.row-fluid .resource-a:hover .resource-blink { top:0; }
+
+.isotope-item { z-index: 2; }
+.isotope-hidden.isotope-item { pointer-events: none; z-index: 1; }
+ 
+.isotope, .isotope .isotope-item { -webkit-transition-duration: 0.8s; -moz-transition-duration: 0.8s; -ms-transition-duration: 0.8s; -o-transition-duration: 0.8s; transition-duration: 0.8s; }
+.isotope { -webkit-transition-property: height, width; -moz-transition-property: height, width; -ms-transition-property: height, width; -o-transition-property: height, width; transition-property: height, width; }
+.isotope .isotope-item { -webkit-transition-property: -webkit-transform, opacity; -moz-transition-property:-moz-transform, opacity; -ms-transition-property:-ms-transform, opacity; -o-transition-property:-o-transform, opacity; transition-property:transform, opacity; }
+</style>
+
+<script>
+
+jQuery(document).ready(function($) {
+    $('.resource-box').unwrap();
+    $('.resource-box').wrapAll('<div id="resourcebox-continer"></div>');
+}
+
+jQuery(window).load(function() {
+    
+    equalheight('.service-box');
+    equalheight('.sameheight');
+    equalheight('.sameheight2 .hs_cos_wrapper_widget');
+    resource();
+ 
+});
+
+jQuery(window).resize(function() {
+    
+    fullheight();
+    equalheight('.service-box');
+    equalheight('.sameheight');
+    equalheight('.sameheight2 .hs_cos_wrapper_widget');
+    
+});
+
+function fullheight(){
+    
+   var winheight = $(window).height();
+   $('.row-fluid .header-slider .header-slides, .row-fluid .header2').height(winheight);  
+   
+    
+}
+
+function resource() {
+ 
+ if($('.resource-box').length > 0){
+    var $container = $('#resourcebox-continer');
+
+      $container.isotope({
+        itemSelector : '.resource-box',
+        layoutMode: 'fitRows',
+      });
+      
+      var $optionSets = $('#options .option-set'),
+          $optionLinks = $optionSets.find('a');
+
+      $optionLinks.click(function(){
+        var $this = $(this);
+        // don't proceed if already selected
+        if ( $this.hasClass('selected') ) {
+          return false;
+        }
+        var $optionSet = $this.parents('.option-set');
+        $optionSet.find('.selected').removeClass('selected');
+        $this.addClass('selected');
+  
+        // make option object dynamically, i.e. { filter: '.my-filter-class' }
+        var options = {},
+            key = $optionSet.attr('data-option-key'),
+            value = $this.attr('data-option-value');
+        // parse 'false' as false boolean
+        value = value === 'false' ? false : value;
+        options[ key ] = value;
+        if ( key === 'layoutMode' && typeof changeLayoutMode === 'function' ) {
+          // changes in layout modes need extra logic
+          changeLayoutMode( $this, options )
+        } else {
+          // otherwise, apply new options
+          $container.isotope( options );
+        }
+        
+        return false;
+      });
+  }
+}
+</script>
