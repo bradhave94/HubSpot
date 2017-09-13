@@ -1,0 +1,68 @@
+{% if widget.include_ccsjs %}
+  <link rel="stylesheet" href="//cdn2.hubspot.net/hubfs/236949/scripts/remodal/remodal.css">
+  <link rel="stylesheet" href="//cdn2.hubspot.net/hubfs/236949/scripts/remodal/remodal-default-theme.css">
+  <script src="//cdn2.hubspot.net/hubfs/236949/scripts/remodal/remodal.min.js"></script>
+{% endif %}
+
+<a href="#{{ widget.youtube_id }}" class="modal-btn btn-{{ widget.youtube_id }}">{{ widget.button_text }}</a>
+
+<div class="remodal" id="{{ widget.youtube_id }}" data-remodal-id="{{ widget.youtube_id }}" role="dialog" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+    <button data-remodal-action="close" class="remodal-close" aria-label="Close"></button>
+    <div>
+        <h2 id="modalTitle">{{ widget.modal_heading }}</h2>
+        <p id="modalDesc">
+            <div class="hs-responsive-embed hs-responsive-embed-youtube"><iframe class="hs-responsive-embed-iframe" src="//www.youtube.com/embed/{{ widget.youtube_id }}" width="560" height="314" allowfullscreen="allowfullscreen" data-service="youtube"></iframe></div>
+        </p>
+    </div>
+    <br>
+    <button data-remodal-action="cancel" class="remodal-cancel">Close</button>
+</div>
+
+<script>
+  $(document).on('closed', '#{{ widget.youtube_id }}.remodal', function (e) {
+        {% if widget.autoplay_video %}$('#{{ widget.youtube_id }} iframe').attr('src', "https://www.youtube.com/embed/{{ widget.youtube_id }}"); {% endif %}
+        {% if !widget.autoplay_video %}$('#{{ widget.youtube_id }} iframe').attr('src', $('#{{ widget.youtube_id }} iframe').attr('src'));{% endif %}
+  });
+  $(document).on('opening', '#{{ widget.youtube_id }}.remodal', function () {
+      {% if widget.autoplay_video %}$('#{{ widget.youtube_id }} iframe').attr('src', "https://www.youtube.com/embed/{{ widget.youtube_id }}?autoplay=1");{% endif %}
+  });
+</script>
+
+
+<style>
+/** Modal**/
+.modal-btn {
+    -webkit-font-smoothing: antialiased;
+    cursor: pointer;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    text-decoration: none;
+    font-family: sans-serif;
+    border-radius: 6px;
+    border-width: 0px;
+    transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -webkit-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    text-shadow: none;
+    line-height: 1.5em;
+    padding: 13px 30px;
+    background-color: #00AEEF;
+    color: #fff;
+}
+
+.modal-btn:hover {
+    background: #3F3F3F;
+    color: rgb(255,255,255);
+}
+
+.remodal .hs-responsive-embed iframe {
+   width: 530px;
+    height: 350px;
+}
+</style>
