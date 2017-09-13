@@ -1,0 +1,60 @@
+<div class="half-half {{ widget.text_position }} mobile-{{ widget.mobile_image_position }} {{ widget.text_width }}" style='background-color: {{ widget.background_color }}'>
+    <div class="half-half-content">
+        <div class="half-half-padding">
+            <h2>{{ widget.heading }}</h2>
+            {{ widget.content }}
+        </div>
+    </div>
+    <div class="half-half-image " style="background-image: url({{ widget.image.src }});"></div>
+</div>
+
+<style>
+.half-half {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+	flex-flow: row wrap;
+	justify-content: center;
+	width: 100%;
+}
+
+.half-half-image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.text-thirty .half-half-content, .text-seventy .half-half-image { width: 30%; }
+
+.text-fifty .half-half-content, .text-fifty .half-half-image { width: 50%; }
+
+.text-seventy .half-half-content, .text-thirty .half-half-image { width: 70%; }
+
+.half-half.right {
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+
+.half-half-padding { padding: 20% 10%; }
+
+.half-half-content h2 {
+    font-size: 36px;
+    line-height: 46px;
+    font-weight: 300;
+    font-family: "p22-underground","Arial","Helvetica",sans-serif;
+    color: #f4090f;
+}
+
+@media (max-width: 767px) {
+    .half-half-content, .half-half-image { width: 100% !important; }
+
+    .half-half-image { height: 400px; }
+
+    .half-half.mobile-top {
+        -webkit-flex-direction: column-reverse;
+        flex-direction: column-reverse;
+    }
+}
+</style>
