@@ -12,7 +12,7 @@
 * [Back To Top](https://github.com/bradhave94/HubSpot/blob/master/Custom%20Modules/back-to-top.html)
 * [Small Header](https://github.com/bradhave94/HubSpot/blob/master/Custom%20Modules/small-header.html)
 * [FA Social](https://github.com/bradhave94/HubSpot/blob/master/Custom%20Modules/fa-social.html)
-* [YouTube Modal](https://github.com/bradhave94/HubSpot/wiki/YouTube-Modal)]
+* [YouTube Modal](https://github.com/bradhave94/HubSpot/wiki/YouTube-Modal)
 
 ## HubL
 * [Banner Image](https://github.com/bradhave94/HubSpot/blob/master/HubL/banner-image)
