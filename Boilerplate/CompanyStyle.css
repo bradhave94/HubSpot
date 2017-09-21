@@ -379,6 +379,271 @@ q:before, q:after, blockquote:before, blockquote:after {}
 /* Modular & Reusable Components
    ========================================================================== */
 
+/* FAQ Module */
+.accordion {}
+.accordion_group {
+    margin-bottom: 2px;
+    background: #f0f0f0;
+    padding: 5px 10px;
+}
+.accordion_header {
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 16px;
+    width: 100%;
+    padding: 10px 15px;
+}
+.accordion_icon{
+    color: #34495e;
+    padding-right: 16px;
+    background-color: #34495e;
+    margin-right: 10px;
+    font-size: 14px;
+    border-radius: 3px;
+}
+.accordion_content { 
+    padding: 10px 15px;
+    display: none;
+}
+
+.accordion_group .accordion_icon {
+    position: relative;
+}
+.accordion_group .accordion_icon::before,
+.accordion_group .accordion_icon::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 3px;
+    width: 10px;
+    height: 2px;
+    margin-top: -1px;
+    -webkit-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transition: all .25s;
+    transition: all .25s;
+    background-color: #f0f0f0;
+}
+.accordion_group.expanded .accordion_icon::before {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    opacity: 0;
+}
+.accordion_group .accordion_icon::before {
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 1;
+}
+.accordion_group .accordion_icon::after {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+.accordion_group.expanded .accordion_icon::after {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+@media (max-width: 767px) {}
+
+
+/* Testimonial */
+.quote-box {
+    background: #f5f5f5;
+    padding: 30px;
+    padding-bottom: 15px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+    -moz-background-clip: padding;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    position: relative;
+    margin-bottom: 30px;
+}
+.quote-box:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #f5f5f5;
+    position: absolute;
+    bottom: -20px;
+    margin-left: -20px;
+    left: 50%;
+}
+.quote {
+    border: none;
+    padding: 0;
+    font-size: 16px;
+    color: #666666;
+    margin: 0px;
+}
+.details {
+    font-size: 13px;
+}  
+.name {
+    display: block;
+    font-weight: normal;
+    font-family: 'Montserrat', sans-serif;
+}
+.quote-box .title {
+    display: block;
+    color: #b3b3b3;
+    margin-bottom: 0;
+    font-weight: normal;
+    font-size: 13px;
+}
+.quote-box .fa{
+    font-size: 18px;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+
+.img-rounded {
+    border-radius: 6px;
+}
+.testimonial-headshot {
+    text-align: center;
+}
+.testimonial-headshot img{
+    border-radius: 50%;
+    max-width: 150px !important;
+    max-height: 150px !important;
+    margin-top: -10px;
+    border: 5px solid #f5f5f5;
+}
+
+
+/* Well Module */
+
+/* Well Colors */
+{% set baseColor = "#666" %}
+{% set accentColor1   = "#34495e" %}
+{% set accentColor2   = "#ccc" %}
+{% set accentColor3   = "#ddd" %}
+{% set primary   = "#428bca" %}
+{% set success   = "#5cb85c" %}
+{% set info      = "#5bc0de" %}
+{% set danger    = "#a94442" %}
+{% set plain     = "#f5f5f5" %}
+#well{
+    min-height: 20px;
+    margin-bottom: 20px;       
+    border-radius: 4px;
+    color: #fff;
+}
+#well .default{
+    border-radius: 4px;        
+    border-style: solid;
+    border-width: 1px;
+    background: {{ accentColor1 }};
+    border-color: {{ color_variant(accentColor1, -50) }};
+}
+#well .primary{
+    border-radius: 4px;
+    background: {{ color_variant(primary, 50) }};
+    border: 1px solid {{ primary }};
+}    
+#well .success{
+    border-radius: 4px;
+    background: {{ color_variant(success, 50) }};
+    border: 1px solid {{ success }};
+}    
+#well .danger{
+    border-radius: 4px;
+    background: {{ color_variant(danger, 50) }};
+    border: 1px solid {{ danger }};
+}    
+#well .info{
+    border-radius: 4px;
+    background: {{ color_variant(info, 50) }};
+    border: 1px solid {{ info }};        
+}   
+#well .plain{
+    border-radius: 4px;
+    background:{{ plain }};
+    color: {{ baseColor }};
+    border: 1px solid {{ accentColor3 }};
+}
+#well .small{
+    padding: 20px;
+}
+#well .medium{
+    padding: 24px;
+}   
+#well .large{
+    padding: 28px;
+}
+#well .close{
+    float: right;
+    padding: 3px 10px 0px 0px;
+    cursor: pointer;
+    color: {{ baseColor }};
+}
+
+/* Tabber Module */
+.body-container .custom-tabber-wrap .tabber-tabs {
+    border-bottom: 1px solid #ddd;
+    list-style: none;
+    padding: 0;
+    margin: 40px 0 -2px;
+}
+.custom-tabber-wrap .tabber-tabs > li {
+    float: left;
+}
+.custom-tabber-wrap .tabber-tabs > li > a {
+    padding-right: 12px;
+    padding-left: 12px;
+    margin-right: 2px;
+    line-height: 14px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    line-height: 20px;
+    border: 1px solid transparent;
+    border-radius: {{ borderRadius }};
+    text-decoration: none;
+    display: block;
+}
+.custom-tabber-wrap .tabber-tabs > .active > a, 
+.custom-tabber-wrap .tabber-tabs > .active > a:hover, 
+.custom-tabber-wrap .tabber-tabs > .active > a:focus {
+    color: #555555;
+    cursor: default;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-bottom-color: transparent;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.custom-tabber-wrap .tabber-content .tab-pane {
+    background: #fff;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: {{ borderRadius }};
+}
+.custom-tabber-wrap .tabber-content .tab-pane.active:nth-child(1) {
+    border-top-left-radius: 0;
+}
+.body-container .custom-tabber-wrap .tabber-content ul {
+    padding: 0;
+    margin: 0;
+}
+.custom-tabber-wrap .tabber-content .block h3 {
+    display: none;
+}
+
+
 /* Callouts */
 
 /* Social Media Custom Icons */
