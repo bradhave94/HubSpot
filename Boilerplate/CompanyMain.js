@@ -1,7 +1,7 @@
 $(function() {
     
     $(".custom-menu-primary").addClass("js-enabled");
-    $(".custom-menu-primary .hs-menu-wrapper").before('<div class="mobile-trigger cta_border_button">MENU</div>');
+    $(".custom-menu-primary .hs-menu-wrapper").before('<div class="mobile-trigger cta_border_button"><i></i></div>');
     $(".custom-menu-primary .flyouts .hs-item-has-children > a").after(' <div class="child-trigger"><i></i></div>');
     $(".mobile-trigger").click(function() {
         $(this).next(".custom-menu-primary .hs-menu-wrapper").slideToggle(250);
