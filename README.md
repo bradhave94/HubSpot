@@ -23,8 +23,8 @@
 * [Recent Post by Topic](https://github.com/bradhave94/HubSpot/blob/master/HubL/blog_recent_topic_posts)
 
 ## JavaScript
-* [Equal Heights](https://raw.githubusercontent.com/bradhave94/HubSpot/master/js/equalHeights.js)
+* [Equal Heights](https://github.com/bradhave94/HubSpot/blob/master/js/equalHeights.js)
 
 
 ## CSS
-* [Media Queries](https://raw.githubusercontent.com/bradhave94/HubSpot/master/css/Bootstrap4Breakpoints.css)
+* [Media Queries](https://github.com/bradhave94/HubSpot/blob/master/css/Bootstrap4Breakpoints.css)
