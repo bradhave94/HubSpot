@@ -19,6 +19,8 @@
 * [Banner Image](https://github.com/bradhave94/HubSpot/blob/master/HubL/banner-image)
 * [Export To Template](https://github.com/bradhave94/HubSpot/blob/master/HubL/export-to-template)
 * [Toggle](https://github.com/bradhave94/HubSpot/blob/master/HubL/toggle.html)
+* [Recent Posts](https://github.com/bradhave94/HubSpot/blob/master/HubL/blog_recent_posts)
+* [Recent Post by Topic](https://github.com/bradhave94/HubSpot/blob/master/HubL/blog_recent_topic_posts)
 
 ## JavaScript
 * [Equal Heights](https://raw.githubusercontent.com/bradhave94/HubSpot/master/js/equalHeights.js)
