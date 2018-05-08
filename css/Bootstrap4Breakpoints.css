@@ -1,48 +1,24 @@
-/*
-####################################################
-M E D I A  Q U E R I E S
-####################################################
-*/
- 
-/*
-::::::::::::::::::::::::::::::::::::::::::::::::::::
-Bootstrap 4 breakpoints
-*/
- 
-/* 
-Extra small devices (portrait phones, less than 544px) 
-No media query since this is the default in Bootstrap because it is "mobile first"
-*/
- 
- 
-/* Small devices (landscape phones, 544px and up) */
-@media (min-width: 544px) {  
- 
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+
 }
- 
-/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
-@media (min-width: 768px) {  
- 
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+
 }
- 
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
- 
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+
 }
- 
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {  
-    
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+
 }
- 
- 
- 
-/*
-::::::::::::::::::::::::::::::::::::::::::::::::::::
-Custom media queries
-*/
- 
-/* Set width to make card deck cards 100% width */
-@media (max-width: 950px) { 
- 
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+
 }
