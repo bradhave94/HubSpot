@@ -1,0 +1,5 @@
+{{ blog_recent_topic_posts('default', 'marketing-tips', 5 ) }}
+{% set topic_posts = blog_recent_topic_posts('default', 'marketing-tips', 5) %}
+{% for topic_post in topic_posts %}
+    <div class="post-title">{{ topic_post.name }}</div>
+{% endfor %}
