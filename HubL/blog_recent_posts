@@ -1,0 +1,5 @@
+{% set posts = blog_recent_posts('default', 5) %}
+{% for post in posts %}
+    <h3><a href="{{ post.absolute_url }}">{{ post.name }}</a></h3>
+    <img src="{{ post.featured_image }}" alt="{{ post.name }}">
+{% endfor %}
